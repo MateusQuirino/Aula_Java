@@ -1,0 +1,55 @@
+[1mdiff --git a/bin/Imc.class b/bin/Imc.class[m
+[1mindex b0d6b5d..6e95909 100644[m
+Binary files a/bin/Imc.class and b/bin/Imc.class differ
+[1mdiff --git a/bin/Principal.class b/bin/Principal.class[m
+[1mindex c2fc111..12eb511 100644[m
+Binary files a/bin/Principal.class and b/bin/Principal.class differ
+[1mdiff --git a/src/Imc.java b/src/Imc.java[m
+[1mindex fd58af1..5865c32 100644[m
+[1m--- a/src/Imc.java[m
+[1m+++ b/src/Imc.java[m
+[36m@@ -7,4 +7,22 @@[m [mpublic class Imc {[m
+ 		return imc;[m
+ 	}[m
+ 	[m
+[32m+[m	[32mpublic static String statusImc(float imc){[m
+[32m+[m		[32mString status;[m
+[32m+[m		[32mif (imc < 18.5){[m
+[32m+[m			[32mstatus = "Abaixo do peso ideal";[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse if (imc <= 24.9){[m
+[32m+[m			[32mstatus = "Peso normal";[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse if (imc <= 29.9){[m
+[32m+[m			[32mstatus = "Sobrepeso";[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse if (imc <= 39.9){[m
+[32m+[m			[32mstatus = "Obesidade";[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse {status = "Obesidade morbida";[m
+[32m+[m		[32m}[m
+[32m+[m		[32mreturn status;[m
+[32m+[m	[32m}[m
+ }[m
+[1mdiff --git a/src/Principal.java b/src/Principal.java[m
+[1mindex 6e647fc..3388b4a 100644[m
+[1m--- a/src/Principal.java[m
+[1m+++ b/src/Principal.java[m
+[36m@@ -9,6 +9,7 @@[m [mpublic class Principal {[m
+ 		float altura = 0;[m
+ 		boolean val;[m
+ 		String nome;[m
+[32m+[m		[32mString status;[m
+ 		[m
+ 		Scanner scanner = new Scanner(System.in);[m
+ 		[m
+[36m@@ -38,7 +39,8 @@[m [mpublic class Principal {[m
+ 		[m
+ 		System.out.println(imc);[m
+ 		[m
+[31m-				[m
+[32m+[m		[32mstatus = Imc.statusImc(imc);[m
+[32m+[m		[32mSystem.out.println("Seu status é: " + status);[m
+ 	}[m
+ [m
+ }[m
